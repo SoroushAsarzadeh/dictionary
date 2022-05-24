@@ -1,6 +1,13 @@
 <div class="container">
-  <form [formGroup]="phraseForm" (ngSubmit)="translatePhrase()">
-    <input type="text" placeholder="Enter word to translate" formControlName="phrase">
-    <button type="submit">Translate</button>
-  </form>
+  <div class="header">
+    <form class="search" [formGroup]="phraseForm" (ngSubmit)="translatePhrase()">
+      <input class="search__input" type="text" placeholder="Enter word to translate" formControlName="phrase">
+      <button class="search__button" type="submit">Translate</button>
+    </form>
+  </div>
+
+  <div class="result">
+    <p class="result__phrase">{{data?.word}} {{data?.phonetic}}</p>
+    <app-meaning-card *ngFor="let meaning_item of meanings" [meaning]="meaning_item"></app-meaning-card>
+  </div>
 </div>

@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MeaningCardComponent } from './meaning-card/meaning-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MeaningCardComponent
   ],
   imports: [
     BrowserModule,

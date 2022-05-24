@@ -1,0 +1,13 @@
+@import './mixins';
+
+.chip-primary-sm {
+  height: 22px;
+  min-width: 36px;
+  border-radius: 16px;
+  padding: 2px 8px;
+  background-color: gray;
+  color: greenyellow;
+  font-size: 12px;
+  font-weight: 500;
+  @include flex-center;
+}
