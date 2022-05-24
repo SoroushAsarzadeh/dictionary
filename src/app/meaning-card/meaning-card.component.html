@@ -1,3 +1,29 @@
-<div class="card">
-    <p>{{meaning?.partOfSpeech}}</p>
-</div>
+<section class="card">
+    <div class="card__side">
+        <span class="card__side-text">{{meaning?.partOfSpeech}}</span>
+    </div>
+
+    <div class="card__detail">
+        <div *ngIf="meaning.definition" class="card__detail-definition">
+            <div class="title">Definition</div>
+            <div class="description">{{meaning.definition}}</div>
+        </div>
+        <div *ngIf="meaning.example" class="card__detail-exmaple">
+            <div class="title">Example</div>
+            <div class="description">{{meaning.example}}</div>
+        </div>
+        <div *ngIf="meaning.synonyms?.length" class="card__detail-synonyms">
+            <div class="title">Synonyms</div>
+            <div class="chips-container">
+                <div class="chip-primary-sm" *ngFor="let synonym of meaning.synonyms">{{synonym}}</div>
+            </div>
+        </div>
+        <div *ngIf="meaning.antonyms?.length" class="card__detail-acronyms">
+            <div class="title">Antonyms</div>
+            <div class="chips-container">
+                <div class="chip-primary-sm" *ngFor="let antonym of meaning.antonyms">{{antonym}}</div>
+            </div>
+        </div>
+    </div>
+
+</section>

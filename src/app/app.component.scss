@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 7rem;
+    background-color: aqua;
+    font-size: 5rem;
+    line-height: 0;
+}
+
+.search {
+    
+    &__input {
+
+    }
+
+    &__button {
+
+    }
+}

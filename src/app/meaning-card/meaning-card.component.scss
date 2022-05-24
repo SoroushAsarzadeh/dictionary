@@ -1,9 +1,68 @@
+@import '../../assets/sass/mixins';
+
 .card {
-    height: 15rem;
-    // width: 50rem;
+    // height: 15rem;
+    height: auto;
     width: 65rem;
-    border: 1px black solid;
     font-size: 3rem;
     margin: 1rem auto;
+    
+    border: 1px black solid;
+    @include flex-center;
+
+    &__side {
+        width: 3rem;
+        height: 100%;
+        background-color: aqua;
+        @include flex-center;
+
+        &-text {
+            display: block;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__detail {
+        align-self: flex-start;
+        flex: 1;
+        height: 100%;
+        padding: .5rem 1rem;
+        background-color: orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        // * > div {
+        //     @include flex-center;
+        // }
+
+        .title {
+            font-size: 2rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        &-synonyms, &-acronyms {
+            // display: flex;
+            // justify-content: flex-start;
+            // align-items: center;
+            width: 100%;
+            .chips-container {
+                height: 5rem;
+                background-color: aquamarine;
+                
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 8px;
+            }
+
+        }
+
+    }
 
 }
