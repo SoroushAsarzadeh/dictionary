@@ -10,6 +10,14 @@
     line-height: 0;
 }
 
+.result {
+    &__phrase {
+        font-size: 3rem;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
 .search {
     
     &__input {
