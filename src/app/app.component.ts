@@ -12,13 +12,17 @@ export class AppComponent implements OnInit {
   phraseForm: FormGroup;
   data;
   meanings;
+  audioUrl: string;
+  emptyScreenMsgDefault: string = 'Let\'s search for something interesting!';
+  emptyScreenMsg: string;
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
+    this.emptyScreenMsg = this.emptyScreenMsgDefault;
     this.phraseForm = new FormGroup(
       {
-        phrase: new FormControl('odd')
+        phrase: new FormControl(null)
       }
     );
   }
@@ -26,13 +30,17 @@ export class AppComponent implements OnInit {
   translatePhrase() {
     this.httpService.getTranslation(this.phraseForm.controls.phrase.value.trim()).subscribe(
       (data) => {
-        console.log(this.data);
+        console.log(data);
+        this.audioUrl = this.extractAudioUrl(data[0]);
         this.data = data[0];
         this.meanings = this.unifyMeanings();
         console.log(this.meanings)
       },
       (err) => {
         console.log(err);
+        this.data = null;
+        this.meanings = null;
+        this.emptyScreenMsg = err.error.title;
       }
     );
 
@@ -48,6 +56,17 @@ export class AppComponent implements OnInit {
       definitions = [...definitions, ...el.definitions];
     });
     return definitions;
+  }
+
+  extractAudioUrl(data): string {
+    return data?.phonetics?.find(el => el.audio)?.audio || '';
+  }
+
+  playAudio() {
+    const audio = new Audio();
+    audio.src = this.audioUrl;
+    audio.load();
+    audio.play();
   }
 
 
