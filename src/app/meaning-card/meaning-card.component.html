@@ -8,7 +8,7 @@
             <div class="title">Definition</div>
             <div class="description">{{meaning.definition}}</div>
         </div>
-        <div *ngIf="meaning.example" class="card__detail-exmaple">
+        <div *ngIf="meaning.example" class="card__detail-example">
             <div class="title">Example</div>
             <div class="description">{{meaning.example}}</div>
         </div>
@@ -18,7 +18,7 @@
                 <div class="chip-primary-sm" *ngFor="let synonym of meaning.synonyms">{{synonym}}</div>
             </div>
         </div>
-        <div *ngIf="meaning.antonyms?.length" class="card__detail-acronyms">
+        <div *ngIf="meaning.antonyms?.length" class="card__detail-antonyms">
             <div class="title">Antonyms</div>
             <div class="chips-container">
                 <div class="chip-primary-sm" *ngFor="let antonym of meaning.antonyms">{{antonym}}</div>

@@ -1,13 +1,43 @@
 @import './mixins';
+@import './variables';
 
 .chip-primary-sm {
   height: 22px;
   min-width: 36px;
   border-radius: 16px;
   padding: 2px 8px;
-  background-color: gray;
-  color: greenyellow;
-  font-size: 12px;
+  background-color: $col-text;
+  color: $col-primary-dark;
+  font-size: 1.6rem;
   font-weight: 500;
   @include flex-center;
+}
+
+.search {
+  border: 2px solid $col-devider;
+  height: 100%;
+  @include flex-center;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &__input {
+    height: inherit;
+    background-color: $col-primary-ultra-dark;
+    color: $col-text;
+    border: none;
+    padding-inline-start: 1rem;
+  }
+
+  &__button {
+    width: 100%;
+    height: inherit;
+    border: none;
+    background-color: $col-primary-ultra-dark;
+  }
+
+  &__icon {
+    height: 2.5rem;
+    width: 4rem;
+    fill: $col-devider;
+  }
 }

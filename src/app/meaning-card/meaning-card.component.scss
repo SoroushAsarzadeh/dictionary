@@ -1,24 +1,30 @@
 @import '../../assets/sass/mixins';
+@import '../../assets/sass/variables';
 
 .card {
-    // height: 15rem;
-    height: auto;
     width: 65rem;
     font-size: 3rem;
-    margin: 1rem auto;
-    
-    border: 1px black solid;
+    margin: 3rem auto 2rem;
+    border-radius: 5px;
+    outline: 2px solid $col-devider;
+    overflow: hidden;
     @include flex-center;
 
     &__side {
         width: 3rem;
         height: 100%;
-        background-color: aqua;
+        color: $col-text;
         @include flex-center;
-
+        
         &-text {
+            font-size: 1.5rem;
             display: block;
             transform: rotate(-90deg);
+            white-space: nowrap;
+            &::first-letter {
+                text-transform: uppercase;
+                font-size: 2rem;
+            }
         }
     }
 
@@ -26,43 +32,52 @@
         align-self: flex-start;
         flex: 1;
         height: 100%;
-        padding: .5rem 1rem;
-        background-color: orange;
+        padding: 1rem;
+        border-inline-start: 1px solid $col-devider;
+        background-color: $col-primary-dark;
+        color: $col-text;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
 
-        // * > div {
-        //     @include flex-center;
-        // }
+        &-definition {
+            width: 100%;
+        }
 
+        &-example,
+        &-synonyms,
+        &-antonyms {
+            width: 100%;
+            border-top: 1px solid $col-devider;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
         .title {
             font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+
+            &::first-letter {
+                font-size: 150%;
+                font-weight: 100;
+            }
         }
 
         .description {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.6rem;
+            font-weight: 400;
         }
 
-        &-synonyms, &-acronyms {
-            // display: flex;
-            // justify-content: flex-start;
-            // align-items: center;
+        &-synonyms, &-antonyms {
             width: 100%;
-            .chips-container {
-                height: 5rem;
-                background-color: aquamarine;
-                
+            .chips-container {                
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 gap: 8px;
             }
-
         }
-
     }
-
 }

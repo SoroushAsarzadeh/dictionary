@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu:wght@400;500;700&display=swap');
 @import './assets/sass/components';
 
 * {
@@ -14,14 +15,4 @@
     position: relative;
     top: 1rem;
     right: 1rem;
-
-    &-noun {
-        background-color: yellow;
-    }
-    &-verb {
-        background-color: pink;
-    }
-    &-adjective {
-        background-color: gray;
-    }
 }
