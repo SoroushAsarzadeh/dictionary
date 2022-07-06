@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   data;
   meanings;
   audioUrl: string;
-  emptyScreenMsgDefault: string = 'Let\'s search for something interesting!';
+  emptyScreenMsgDefault: string = 'Let\'s search for something meaningful!';
   emptyScreenMsg: string;
 
   constructor(private httpService: HttpService) { }

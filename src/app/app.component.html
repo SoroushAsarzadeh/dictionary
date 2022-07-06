@@ -3,7 +3,7 @@
   <div class="header">
     <div class="logo">fast lang</div>
     <form class="search" [formGroup]="phraseForm" (ngSubmit)="translatePhrase()">
-      <input class="search__input" type="text" placeholder="Enter word to translate" formControlName="phrase">
+      <input class="search__input" type="text" placeholder="search something" formControlName="phrase">
       <button class="search__button" type="submit">
         <svg class="search__icon">
           <use xlink:href="../assets/icons/sprite.svg#icon-magnifying-glass"></use>
@@ -14,14 +14,21 @@
 
   <div class="result">
     <div *ngIf="data" class="result__title">
-      <h1 class="result__phrase">{{data?.word}} {{data?.phonetic}}</h1>
-      <button *ngIf="audioUrl" class="result__audio" (click)="playAudio()">
+      <h1 class="result__phrase">{{data?.word}}</h1>
+      <h1 class="result__phonetic">{{data?.phonetic}}</h1>
+      <!-- <button *ngIf="audioUrl" class="result__audio" (click)="playAudio()">
         <svg class="icon">
           <use xlink:href="../assets/icons/sprite.svg#icon-megaphone"></use>
         </svg>
-      </button>
+      </button> -->
     </div>
     
     <app-meaning-card *ngFor="let meaning_item of meanings" [meaning]="meaning_item"></app-meaning-card>
+
+    <button *ngIf="audioUrl" class="fab btn-play" (click)="playAudio()">
+      <svg class="icon">
+        <use xlink:href="../assets/icons/sprite.svg#icon-megaphone"></use>
+      </svg>
+    </button>
   </div>
 </div>
