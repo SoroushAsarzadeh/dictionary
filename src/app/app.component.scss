@@ -7,7 +7,6 @@
   min-height: 100vh;
   padding-bottom: 5rem;
 }
-
 .empty-screen {
   width: 100vw;
   text-align: center;
@@ -19,20 +18,17 @@
   font-weight: 100;
   color: $col-text;
 }
-
 .header {
   @include flex-center;
   position: sticky;
   top: 0;
   z-index: 1;
   height: 7rem;
-  // background-color: aqua;
   background-color: $col-primary-dark;
   font-size: 5rem;
   line-height: 0;
   padding: 1.5rem 0;
   border-bottom: 1px solid $col-devider;
-
   .logo {
     position: absolute;
     top: 3.2rem;
@@ -42,26 +38,22 @@
     color: $col-text;
   }
 }
-
 @include respond-phone {
   .header {
     height: 14rem;
     padding-top: 8rem;
-
     .logo {
       left: 50%;
       transform: translateX(-50%);
     }
   }
 }
-
 .result {
   &__title {
     @include flex-center;
     gap: 1rem;
     padding: 1rem 0;
   }
-
   &__phrase,
   &__phonetic {
     font-size: 4rem;
@@ -70,12 +62,10 @@
     color: $col-text;
     margin: 0 5px;
   }
-
   &__audio {
     background-color: $col-primary-ultra-dark;
     border: none;
     margin-inline-start: 3rem;
-
     .icon {
       height: 2.5rem;
       width: 4rem;
@@ -87,11 +77,6 @@
 @include respond-phone {
   .result {
     padding: 0 1rem;
-
-    &__title {
-      // flex-direction: column;
-    }
-
     &__phrase,
     &__phonetic {
       margin: 0;

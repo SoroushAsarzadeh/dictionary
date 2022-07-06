@@ -16,11 +16,6 @@
     <div *ngIf="data" class="result__title">
       <h1 class="result__phrase">{{data?.word}}</h1>
       <h1 class="result__phonetic">{{data?.phonetic}}</h1>
-      <!-- <button *ngIf="audioUrl" class="result__audio" (click)="playAudio()">
-        <svg class="icon">
-          <use xlink:href="../assets/icons/sprite.svg#icon-megaphone"></use>
-        </svg>
-      </button> -->
     </div>
     
     <app-meaning-card *ngFor="let meaning_item of meanings" [meaning]="meaning_item"></app-meaning-card>

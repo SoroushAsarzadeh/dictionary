@@ -30,11 +30,9 @@ export class AppComponent implements OnInit {
   translatePhrase() {
     this.httpService.getTranslation(this.phraseForm.controls.phrase.value.trim()).subscribe(
       (data) => {
-        console.log(data);
         this.audioUrl = this.extractAudioUrl(data[0]);
         this.data = data[0];
         this.meanings = this.unifyMeanings();
-        console.log(this.meanings)
       },
       (err) => {
         console.log(err);
@@ -68,6 +66,4 @@ export class AppComponent implements OnInit {
     audio.load();
     audio.play();
   }
-
-
 }

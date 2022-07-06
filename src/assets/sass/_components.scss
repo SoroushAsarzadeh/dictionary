@@ -19,7 +19,6 @@
   @include flex-center;
   border-radius: 1rem;
   overflow: hidden;
-
   &__input {
     height: inherit;
     background-color: $col-primary-ultra-dark;
@@ -28,14 +27,12 @@
     outline: none;
     padding-inline-start: 1rem;
   }
-
   &__button {
     width: 100%;
     height: inherit;
     border: none;
     background-color: $col-primary-ultra-dark;
   }
-
   &__icon {
     height: 2.5rem;
     width: 4rem;
@@ -47,7 +44,6 @@
   .search {
     width: 100%;
     margin: 0 1rem;
-    
     &__button {
       display: flex;
       justify-content: flex-end;

@@ -9,13 +9,11 @@
     outline: 2px solid $col-devider;
     overflow: hidden;
     @include flex-center;
-
     &__side {
         width: 3rem;
         height: 100%;
         color: $col-text;
         @include flex-center;
-        
         &-text {
             font-size: 1.5rem;
             display: block;
@@ -27,7 +25,6 @@
             }
         }
     }
-
     &__detail {
         align-self: flex-start;
         flex: 1;
@@ -40,11 +37,9 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-
         &-definition {
             width: 100%;
         }
-
         &-example,
         &-synonyms,
         &-antonyms {
@@ -53,23 +48,19 @@
             padding-top: 15px;
             margin-top: 15px;
         }
-        
         .title {
             font-size: 2rem;
             font-weight: 300;
             margin-bottom: 1rem;
-
             &::first-letter {
                 font-size: 150%;
                 font-weight: 100;
             }
         }
-
         .description {
             font-size: 1.6rem;
             font-weight: 400;
         }
-
         &-synonyms, &-antonyms {
             width: 100%;
             .chips-container {                
