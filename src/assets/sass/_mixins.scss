@@ -3,3 +3,9 @@
     justify-content: center;
     align-items: center;    
 }
+
+@mixin respond-phone {
+    @media (max-width: 768px) {
+        @content
+    }
+}

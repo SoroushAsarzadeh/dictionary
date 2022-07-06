@@ -25,6 +25,7 @@
     background-color: $col-primary-ultra-dark;
     color: $col-text;
     border: none;
+    outline: none;
     padding-inline-start: 1rem;
   }
 
@@ -39,5 +40,31 @@
     height: 2.5rem;
     width: 4rem;
     fill: $col-devider;
+  }
+}
+
+@include respond-phone {
+  .search {
+    width: 100%;
+    margin: 0 1rem;
+    
+    &__button {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}
+
+.fab {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background-color: $col-text;
+  border: none;
+  @include flex-center;
+  .icon {
+    fill: $col-primary-ultra-dark;
+    transform: scale(.5);
   }
 }
